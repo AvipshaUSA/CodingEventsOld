@@ -38,3 +38,4 @@ C:\Users\Pradip\Desktop\lc101\C#\MVC\CodingEvents\obj\Debug\netcoreapp3.1\Coding
 C:\Users\Pradip\Desktop\lc101\C#\MVC\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Events\Index.cshtml.g.cs
 C:\Users\Pradip\Desktop\lc101\C#\MVC\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Events\AddEvents.cshtml.g.cs
 C:\Users\Pradip\Desktop\lc101\C#\MVC\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Shared\LinkListPartial.cshtml.g.cs
+C:\Users\Pradip\Desktop\lc101\C#\MVC\CodingEvents\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ModifyLayout.cshtml.g.cs

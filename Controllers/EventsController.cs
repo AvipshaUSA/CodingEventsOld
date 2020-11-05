@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CodingEvents.Controllers
 {
     public class EventsController : Controller
     {
 
-        static private List<string> Events = new List<string>();
+        static private Dictionary<string,string> Events = new Dictionary<string,string>();
 
         
         //GET: /<controller> /
@@ -34,12 +35,21 @@ namespace CodingEvents.Controllers
 
         [HttpPost]
         [Route("/Events/AddEvents")]
-        public IActionResult NeWevent(string name)
+        public IActionResult NeWevent(string name,string description)
         {
+            string html="";
             //ViewBag.name = name;
-           // if(name == "" ||name == null)
-    
-        Events.Add(name);
+            // 
+            if (name == "" || name == null) {
+                html = "<h1>Field is empty</h1>";
+                                                // return Redirect("/Events");
+                //return Content(html, "text/html");//  Redirect("/Events");
+              return Redirect("/Events");
+            }
+           
+            else {
+                Events.Add(name, description);
+            }
             return Redirect("/Events"); // redirect to action method
         }
     }
