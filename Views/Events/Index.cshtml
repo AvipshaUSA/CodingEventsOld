@@ -1,0 +1,28 @@
+﻿
+
+<h1>Family Events</h1>
+<p>
+
+    <a asp-controller="Events" asp-action="AddEvents">Add Event</a>
+
+</p>
+
+<partial name="/Views/Shared/LinkListPartial.cshtml" />
+
+@if (ViewBag.events.Count== 0)
+{
+    <p>No Events yet!!</p>
+}
+<ul>
+    @foreach(var meeting in ViewBag.events)
+    {
+        @*@if (meeting == "" || meeting == null)
+        {
+            <p>enter some events</p>
+        }
+        else
+        {*@
+        <li>@meeting</li>
+           // }
+     }
+</ul>
