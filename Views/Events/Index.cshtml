@@ -1,5 +1,16 @@
 ﻿
+<!DOCTYPE html>
+<html>
 
+
+<head>
+    <link rel="stylesheet" href="~/css/Custom.css" /> <!--connection between custom.css file created sheperately by me inside wwwroot and view files. wwwroot/Custom.css. 
+                                                          also copy paste this link code inside  _Layout.cshtml file inside shared folder. shared/Layout.cshtml in line 9 -->
+   
+</head>
+
+
+<body>
 <h1>Family Events</h1>
 <p>
 
@@ -13,7 +24,13 @@
 {
     <p>No Events yet!!</p>
 }
-<table border="1" style="width:100%">
+else
+{
+<table id="customers">
+    <tr>
+    <th> Name:</th>
+    <th> Description:</th>
+    </tr>
 
     @foreach (var meeting in ViewBag.events)
     {
@@ -26,7 +43,11 @@
 
     }
 </table>
+}
+    </body>
 
 <!--Alternate way -- below code will create links which is create inside a different folder under shared/ModifyLayout.cshtml-->
 <!--Avipsha - another Layout partial link created -->
 <!--<p> <partial name="/Views/Shared/ModifyLayout.cshtml" /></p>-->
+
+</html>
