@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CodingEvents.Models;  // used because Event data type is list below is in different folder. so we import.
-
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace CodingEvents.Controllers
 {
@@ -37,11 +37,11 @@ namespace CodingEvents.Controllers
 
         [HttpPost]
         [Route("/Events/AddEvents")]
-        public IActionResult NeWevent(string name, string description) // this argument names are comming from Events/Addevent.cshtml 's.
+        public IActionResult NeWevent(string name, string description,string date) // this argument names are comming from Events/Addevent.cshtml 's.
                                                                              //we declared the names of input as name and description
         {
             
-                Events.Add(new Event(name, description));
+                Events.Add(new Event(name, description, date));
             
             return Redirect("/Events"); // redirect to action method
         }

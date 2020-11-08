@@ -28,19 +28,22 @@ else
 {
 <table id="customers">
     <tr>
-    <th> Name:</th>
-    <th> Description:</th>
+        <th> Name:</th>
+        <th> Description:</th>
+        <th> Date:</th>
     </tr>
 
     @foreach (var meeting in ViewBag.events)
     {
-        <tr>
+<tr>
 
-            <td>@meeting.Name</td>
-            <td>@meeting.Description</td>
-           
+    <td>@meeting.Name</td>
+    <td>@meeting.Description</td>
+    <td>@meeting.Date</td>
 
-        </tr>
+
+
+</tr>
 
     }
 </table>
