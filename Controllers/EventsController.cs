@@ -4,13 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using CodingEvents.Models;  // used because Event data type is list below is in different folder. so we import.
+
 
 namespace CodingEvents.Controllers
 {
     public class EventsController : Controller
     {
 
-        static private Dictionary<string,string> Events = new Dictionary<string,string>();
+        static private List<Event> Events = new List<Event>();
 
         
         //GET: /<controller> /
@@ -35,7 +37,7 @@ namespace CodingEvents.Controllers
 
         [HttpPost]
         [Route("/Events/AddEvents")]
-        public IActionResult NeWevent(string name,string description)
+        public IActionResult NeWevent(string name)
         {
             string html="";
             //ViewBag.name = name;
@@ -48,7 +50,7 @@ namespace CodingEvents.Controllers
             }
            
             else {
-                Events.Add(name, description);
+                Events.Add(new Event(name));
             }
             return Redirect("/Events"); // redirect to action method
         }
