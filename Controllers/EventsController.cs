@@ -37,21 +37,12 @@ namespace CodingEvents.Controllers
 
         [HttpPost]
         [Route("/Events/AddEvents")]
-        public IActionResult NeWevent(string name)
+        public IActionResult NeWevent(string name, string description) // this argument names are comming from Events/Addevent.cshtml 's.
+                                                                             //we declared the names of input as name and description
         {
-            string html="";
-            //ViewBag.name = name;
-            // 
-            if (name == "" || name == null) {
-                html = "<h1>Field is empty</h1>";
-                                                // return Redirect("/Events");
-                //return Content(html, "text/html");//  Redirect("/Events");
-              return Redirect("/Events");
-            }
-           
-            else {
-                Events.Add(new Event(name));
-            }
+            
+                Events.Add(new Event(name, description));
+            
             return Redirect("/Events"); // redirect to action method
         }
     }
