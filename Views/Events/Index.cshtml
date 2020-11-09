@@ -28,6 +28,7 @@ else
 {
 <table id="customers">
     <tr>
+        <th>ID:</th>
         <th> Name:</th>
         <th> Description:</th>
         <th> Date:</th>
@@ -36,7 +37,7 @@ else
     @foreach (var meeting in ViewBag.events)
     {
 <tr>
-
+    <td>@meeting.Id</td>
     <td>@meeting.Name</td>
     <td>@meeting.Description</td>
     <td>@meeting.Date</td>
