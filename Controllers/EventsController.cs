@@ -6,13 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CodingEvents.Models;  // used because Event data type is list below is in different folder. so we import.
 using Microsoft.VisualBasic.CompilerServices;
+using CodingEvents.Data; // used because we need to import EventData from Data/EventData.cs
 
 namespace CodingEvents.Controllers
 {
     public class EventsController : Controller
     {
 
-        static private List<Event> Events = new List<Event>();
+        //static private List<Event> Events = new List<Event>();
 
         
         //GET: /<controller> /
@@ -21,11 +22,9 @@ namespace CodingEvents.Controllers
         public IActionResult Index()
         {
 
-            //Events.Add("My Events");
-            //Events.Add("Your Events"); // we do not need this lines any more.
-            //Events.Add("His Events");
+           
 
-            ViewBag.events = Events;
+            ViewBag.events = EventData.GetAll();
             return View();
         }
 
@@ -41,8 +40,8 @@ namespace CodingEvents.Controllers
                                                                              //we declared the names of input as name and description
         {
             
-                Events.Add(new Event(name, description, date));
-            
+                EventData.Add(new Event(name, description, date)); // Add method from Data/Eventdata.cd has one argument. so here we pass new Event(name, description, date) as an argument.
+
             return Redirect("/Events"); // redirect to action method
         }
     }
