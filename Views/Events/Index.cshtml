@@ -15,8 +15,10 @@
 <p>
 
     <a asp-controller="Events" asp-action="AddEvents">Add Event</a> <!-- this will create a link to go to the AddEvent page-->
+   
 
 </p>
+<p> <a asp-controller="Events" asp-action="DeleteEvents">Delete Event</a> <!-- this will create a link to go to the AddEvent page--></p>
 
 
 
@@ -41,6 +43,8 @@ else
     <td>@meeting.Name</td>
     <td>@meeting.Description</td>
     <td>@meeting.Date</td>
+   
+
 
 
 

@@ -36,13 +36,36 @@ namespace CodingEvents.Controllers
 
         [HttpPost]
         [Route("/Events/AddEvents")]
-        public IActionResult NeWevent(string name, string description,string date) // this argument names are comming from Events/Addevent.cshtml 's.
+        public IActionResult NeWevent(Event newEvent) // this argument names are comming from Events/Addevent.cshtml 's.
                                                                              //we declared the names of input as name and description
         {
             
-                EventData.Add(new Event(name, description, date)); // Add method from Data/Eventdata.cd has one argument. so here we pass new Event(name, description, date) as an argument.
+                EventData.Add(newEvent); // Add method from Data/Eventdata.cd has one argument. so here we pass new Event(name, description, date) as an argument.
 
             return Redirect("/Events"); // redirect to action method
         }
+
+
+        
+        
+        public IActionResult DeleteEvents()
+
+        {
+
+            ViewBag.events = EventData.GetAll(); // we want to display the user what we have in list
+           return View();
+          
+        }
+        [HttpPost]
+        public IActionResult DeleteEvents(int[] eventIds) // create method in the same name of above to post the delete.
+        {
+            foreach (var eventId in eventIds)
+            {
+                EventData.Remove(eventId);
+            }
+            return Redirect("/Events");
+        }
+
+        
     }
 }

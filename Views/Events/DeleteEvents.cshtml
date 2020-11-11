@@ -1,0 +1,26 @@
+﻿
+
+
+<h1>Delete Events</h1>
+
+<form method="post">
+    @foreach (var meeting in ViewBag.events)
+    {
+
+        <label>
+
+            <span>@meeting.Name</span>
+        </label>
+
+        <input type="checkbox" name="eventIds" value="@meeting.Id" />
+    }
+    <input type="submit" value="Delete Selected Event" class="btn btn-outline-danger" />
+    
+
+</form>
+<p>
+
+    <a asp-controller="Events" asp-action="Index">Event List</a> <!--this will create a link to go to Event List page-->
+
+</p>
+

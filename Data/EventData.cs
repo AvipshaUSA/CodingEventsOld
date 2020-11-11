@@ -33,17 +33,18 @@ namespace CodingEvents.Data
         }
 
 
-        //// Remove an Event
-        //public static void Remove(int id)
-        //{
-        //    Events.Remove(id);
-        //}
+        // Remove an Event
+        public static void Remove(int id)
+        {
+            Events.Remove(id);
+        }
 
-        //// GetById , retrive a single Event
-        //public static Event GetById(int id) // return type is Event Class
-        //{
-        //    return Events[id];
-        //}
+        // GetById , retrive a single Event
+        public static Event GetById(int id) // return type is Event Class
+        {
+            
+            return Events[id+1];
+        }
 
     }
 }
