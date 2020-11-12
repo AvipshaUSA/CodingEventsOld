@@ -1,16 +1,5 @@
 ﻿
-<!DOCTYPE html>
-<html>
 
-
-<head>
-    <link rel="stylesheet" href="~/css/Custom.css" /> <!--connection between custom.css file created sheperately by me inside wwwroot and view files. wwwroot/Custom.css. 
-                                                          also copy paste this link code inside  _Layout.cshtml file inside shared folder. shared/Layout.cshtml in line 9 -->
-   
-</head>
-
-
-<body>
 <h1>Family Events</h1>
 <p>
 
@@ -34,6 +23,7 @@ else
         <th> Name:</th>
         <th> Description:</th>
         <th> Date:</th>
+        <th>Edit Event:</th>
     </tr>
 
     @foreach (var meeting in ViewBag.events)
@@ -43,9 +33,7 @@ else
     <td>@meeting.Name</td>
     <td>@meeting.Description</td>
     <td>@meeting.Date</td>
-   
-
-
+    <td><a asp-controller="Events" asp-action="Edit" asp-route-id="@meeting.Id">Edit Event</a></td> @*// asp-route-id passes an {id?} parameter at the end of our route.*@
 
 
 </tr>
@@ -53,10 +41,8 @@ else
     }
 </table>
 }
-    </body>
 
 <!--Alternate way -- below code will create links which is create inside a different folder under shared/ModifyLayout.cshtml-->
 <!--Avipsha - another Layout partial link created -->
 <!--<p> <partial name="/Views/Shared/ModifyLayout.cshtml" /></p>-->
 
-</html>

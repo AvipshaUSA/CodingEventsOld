@@ -1,0 +1,24 @@
+﻿
+<h1>@ViewBag.title</h1>
+
+<form method="post" action="/events/edit">  @* If we do not use action routh or path it will be in the same [route (event/edit/eventId) ].
+                                                we do not want that. it will post "/events/edit" *@
+
+    <input type="hidden" value="@ViewBag.eventsDictionaryObj.Id" name="eventId" />
+    <p> Edit Event Name:</p>
+    <input type="text" name="name" value="@ViewBag.eventsDictionaryObj.Name" /> @*name 'name'should be same as the name constructor variable of event constructor of Event.cs class
+        public Event(string name, string description, string date) : this()*@
+    <p>Edit  Event Description:</p>
+    <input type="text" name="description" value="@ViewBag.eventsDictionaryObj.Description" /> @*name description shoulb be same as Event.cs classes description constructor name
+        public Event(string name, string description, string date) : this().*@
+    <p>  Edit Event Date</p>
+    <input type="date" name="date" value="@ViewBag.eventsDictionaryObj.Date" />
+
+    <input type="Submit" value="Edit Event!" />
+
+
+
+</form>
+
+<!--Avipsha - another Layout partial link created -->
+<!--<p> <partial name="/Views/Shared/ModifyLayout.cshtml" /></p> -->

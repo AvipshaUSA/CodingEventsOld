@@ -66,6 +66,33 @@ namespace CodingEvents.Controllers
             return Redirect("/Events");
         }
 
-        
+
+
+        [Route("/Events/Edit/{eventId}")] // this rout will take us to  the selected id no 
+        public IActionResult Edit(int eventId)
+        {
+
+            ViewBag.eventsDictionaryObj = EventData.GetById(eventId);// picking the value which is a class type List, corresponding to the Id.
+            ViewBag.title = "You are editing " + ViewBag.eventsDictionaryObj.Name + " (id= #" + ViewBag.eventsDictionaryObj.Id + ")"; 
+            // controller code will go here
+            return View();
+        }
+
+
+        [HttpPost]
+        [Route("/events/edit")]
+        public IActionResult SubmitEditEventForm(int eventId, string name, string description, string date)
+        {
+
+            Event updated = EventData.GetById(eventId);  // Event is class type list and a Value od Events dictionary. 
+                                                            //so to get that Event List value which is acctualy a class type ,we need to create an object of Event Class.
+
+            //updating the fields
+            updated.Name = name;
+            updated.Description = description;
+            // controller code will go here
+            return Redirect("/Events");
+        }
+
     }
 }

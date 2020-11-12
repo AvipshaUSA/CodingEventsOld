@@ -43,7 +43,7 @@ namespace CodingEvents.Data
         public static Event GetById(int id) // return type is Event Class
         {
             
-            return Events[id+1];
+            return Events[id]; // it will get the values assosiated with the id key. dictionary[key] returns corresponding Value.
         }
 
     }
