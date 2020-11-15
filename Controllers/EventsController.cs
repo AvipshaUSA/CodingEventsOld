@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using CodingEvents.Models;  // used because Event data type is list below is in different folder. so we import.
 using Microsoft.VisualBasic.CompilerServices;
 using CodingEvents.Data; // used because we need to import EventData from Data/EventData.cs
+using CodingEvents.ViewModel; // used because we need to import AddEventviewModel.cs from DataModel/AddEventviewModel.cs.cs
 
 namespace CodingEvents.Controllers
 {
@@ -34,15 +35,25 @@ namespace CodingEvents.Controllers
         [HttpGet]
         public IActionResult AddEvents() // this addEvents() action method going to responds to getRequest at the localhost 5001/addevents
         {
-            return View();
+
+            AddEventviewModel addEventViewModel = new AddEventviewModel(); // creating an instance of the class AddEventviewModel.cs
+            return View(addEventViewModel);
         }
 
         [HttpPost]
-        [Route("/Events/AddEvents")]
-        public IActionResult NeWevent(Event newEvent) // this argument names are comming from Events/Addevent.cshtml 's.
-                                                                             //we declared the names of input as name and description
+        // [Route("/Events/AddEvents")] we added this httpPost rout inside Events.AddEvent <div> as asp-controller="Events" asp-controller = "AddEvents"
+        //public IActionResult NeWevent(Event newEvent) // this argument names are comming from Events/Addevent.cshtml 's.
+        //we declared the names of input as name and description
+        //public IActionResult NeWevent(Event newEvent)
+        // public IActionResult AddEvent(Event newEvent)// /Event/Add..same method name as httpGt. HttpGet Add retrieve the View form and httpPost responds to processing the view form
+        public IActionResult AddEvents(AddEventviewModel addEventViewModel)
         {
-            
+            Event newEvent = new Event
+            {
+                Name = addEventViewModel.Name,
+                Description = addEventViewModel.Description,
+                Date = addEventViewModel.Date
+            };
                 EventData.Add(newEvent); // Add method from Data/Eventdata.cd has one argument. so here we pass new Event(name, description, date) as an argument.
 
             return Redirect("/Events"); // redirect to action method
