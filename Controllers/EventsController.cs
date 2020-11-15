@@ -22,10 +22,13 @@ namespace CodingEvents.Controllers
         public IActionResult Index()
         {
 
-           
 
-            ViewBag.events = EventData.GetAll();
-            return View();
+
+            //  ViewBag.events = EventData.GetAll();
+            //return View();
+
+            List<Event> events = new List<Event>(EventData.GetAll()); // in order to use this need to change Events/Index.cshtml
+            return View(events);
         }
 
         [HttpGet]
