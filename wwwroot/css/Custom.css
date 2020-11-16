@@ -1,4 +1,5 @@
 ﻿body {
+    background-color:aqua;
 }
 
 
@@ -37,4 +38,13 @@ p{
     #customers tr:hover {
         background-color: #ca7d7d;
     }
+
+/*.field-validation-error {
+    color: red;
+    background: border-box;
+    background-color: yellow;
+}*/
+.field-validation-error{
+    color:red;
+}
 
