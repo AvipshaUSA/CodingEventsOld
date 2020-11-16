@@ -52,7 +52,8 @@ namespace CodingEvents.Controllers
             {
                 Name = addEventViewModel.Name,
                 Description = addEventViewModel.Description,
-                Date = addEventViewModel.Date
+                Date = addEventViewModel.Date,
+                ContactEmail = addEventViewModel.ContactEmail
             };
                 EventData.Add(newEvent); // Add method from Data/Eventdata.cd has one argument. so here we pass new Event(name, description, date) as an argument.
 

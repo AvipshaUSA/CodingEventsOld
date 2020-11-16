@@ -31,6 +31,7 @@ else
             <th> Description:</th>
             <th> Date:</th>
             <th>Edit Event:</th>
+            <th>Contact Email</th>>
         </tr>
 
         @*@foreach (var meeting in ViewBag.events)*@
@@ -43,6 +44,7 @@ else
                 <td>@meeting.Name</td>
                 <td>@meeting.Description</td>
                 <td>@meeting.Date</td>
+                <td>@meeting.ContactEmail</td>
                 <td>
                     <a asp-controller="Events" asp-action="Edit" asp-route-id="@meeting.Id">Edit Event</a>
                     @*<form method="post" action="/Events/Delete">
