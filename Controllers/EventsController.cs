@@ -48,16 +48,23 @@ namespace CodingEvents.Controllers
         // public IActionResult AddEvent(Event newEvent)// /Event/Add..same method name as httpGt. HttpGet Add retrieve the View form and httpPost responds to processing the view form
         public IActionResult AddEvents(AddEventviewModel addEventViewModel)
         {
-            Event newEvent = new Event
+
+            if (ModelState.IsValid)
             {
-                Name = addEventViewModel.Name,
-                Description = addEventViewModel.Description,
-                Date = addEventViewModel.Date,
-                ContactEmail = addEventViewModel.ContactEmail
-            };
+                Event newEvent = new Event
+                {
+                    Name = addEventViewModel.Name,
+                    Description = addEventViewModel.Description,
+                    Date = addEventViewModel.Date,
+                    ContactEmail = addEventViewModel.ContactEmail
+                };
                 EventData.Add(newEvent); // Add method from Data/Eventdata.cd has one argument. so here we pass new Event(name, description, date) as an argument.
 
-            return Redirect("/Events"); // redirect to action method
+                return Redirect("/Events"); // redirect to action method
+
+            }
+
+            return View(addEventViewModel);
         }
 
 
