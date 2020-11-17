@@ -56,7 +56,10 @@ namespace CodingEvents.Controllers
                     Name = addEventViewModel.Name,
                     Description = addEventViewModel.Description,
                     Date = addEventViewModel.Date,
-                    ContactEmail = addEventViewModel.ContactEmail
+                    ContactEmail = addEventViewModel.ContactEmail,
+                    EventLocation = addEventViewModel.EventLocation,
+                    NumberOfAtendee = addEventViewModel.NumberOfAtendee,
+                    Register = addEventViewModel.Register
                 };
                 EventData.Add(newEvent); // Add method from Data/Eventdata.cd has one argument. so here we pass new Event(name, description, date) as an argument.
 
@@ -103,7 +106,7 @@ namespace CodingEvents.Controllers
 
         [HttpPost]
         [Route("/events/edit")]
-        public IActionResult SubmitEditEventForm(int eventId, string name, string description, string date)
+        public IActionResult SubmitEditEventForm(int eventId, string name, string description, string date, string email, int numOfAttendee, string location)
         {
 
             Event updated = EventData.GetById(eventId);  // Event is class type list and a Value od Events dictionary. 
@@ -112,6 +115,10 @@ namespace CodingEvents.Controllers
             //updating the fields
             updated.Name = name;
             updated.Description = description;
+            updated.ContactEmail = email; 
+            updated.NumberOfAtendee = numOfAttendee;
+            updated.EventLocation = location;
+            updated.Date = date;
             // controller code will go here
             return Redirect("/Events");
         }

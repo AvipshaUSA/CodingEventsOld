@@ -39,12 +39,15 @@ p{
         background-color: #ca7d7d;
     }
 
-/*.field-validation-error {
-    color: red;
-    background: border-box;
-    background-color: yellow;
-}*/
+
+
 .field-validation-error{
+    color:red;
+}
+.form-group{
+ border:dashed;
+}
+h1{
     color:red;
 }
 

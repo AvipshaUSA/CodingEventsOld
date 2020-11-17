@@ -14,6 +14,10 @@ namespace CodingEvents.Models
         public string Description { get; set; }
         public string Date { get; set; }
         public string ContactEmail { get; set; }
+        public string EventLocation { get; set; }
+        public int NumberOfAtendee { get; set; }
+        public bool Register { get; set; } 
+        public bool IsTrue { get { return true; } }
 
 
         public int Id { get; }
@@ -26,14 +30,16 @@ namespace CodingEvents.Models
             nextId++;
         }
 
-        public Event(string name, string description, string date, string contactEmail) : this()// constructor
+        public Event(string name, string description, string date, string contactEmail, string eventLocation, int numberOfAtendee, bool register) : this()// constructor
         {
             Name = name;
             Description = description;
             Date = date;
             ContactEmail = contactEmail;
-           
-           
+            EventLocation = eventLocation;
+            NumberOfAtendee = numberOfAtendee;
+            Register = register;
+            
         }
 
         public override string ToString()

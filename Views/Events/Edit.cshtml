@@ -1,8 +1,7 @@
 ﻿
 <h1>@ViewBag.title</h1>
 
-<form method="post" action="/events/edit">  @* If we do not use action routh or path it will be in the same [route (event/edit/eventId) ].
-                                                we do not want that. it will post "/events/edit" *@
+<form method="post" action="/events/edit">
 
     <input type="hidden" value="@ViewBag.eventsDictionaryObj.Id" name="eventId" />
     <p> Edit Event Name:</p>
@@ -13,6 +12,21 @@
         public Event(string name, string description, string date) : this().*@
     <p>  Edit Event Date</p>
     <input type="date" name="date" value="@ViewBag.eventsDictionaryObj.Date" />
+
+
+    <p>  Edit Email</p>
+    <input type="email" name="email" value="@ViewBag.eventsDictionaryObj.ContactEmail" />
+
+   
+
+    <p>  Edit Event Location</p>
+    <input type="text" name="location" value="@ViewBag.eventsDictionaryObj.EventLocation" />
+
+
+    <p>  Edit Event Attendee</p>
+    <input type="text" name="attendee" value="@ViewBag.eventsDictionaryObj.NumberOfAtendee" />
+
+
 
     <input type="Submit" value="Edit Event!" />
 

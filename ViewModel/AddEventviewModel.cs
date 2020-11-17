@@ -21,5 +21,21 @@ namespace CodingEvents.ViewModel
 
         [EmailAddress]
         public string ContactEmail { get; set; }
+
+        [Required(ErrorMessage = "Location name is required.")]
+        [Display(Name = "Events Location")]
+        public string EventLocation { get; set; }
+
+        [Required(ErrorMessage = "Number of attendee  is required.")]
+        [Display(Name = "Number of Attendees")]
+        [Range(0, 10, ErrorMessage = "Name must be 0 and 10 charecters.")]
+        public int NumberOfAtendee { get; set; }
+
+      
+        [Compare(nameof(IsTrue), ErrorMessage = "Registration Required. Please Check the Box")]
+        public bool Register { get; set; }
+
+        
+        public bool IsTrue { get { return true; } }
     }
 }

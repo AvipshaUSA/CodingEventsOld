@@ -30,30 +30,37 @@ else
             <th> Name:</th>
             <th> Description:</th>
             <th> Date:</th>
-            <th>Edit Event:</th>
+
             <th>Contact Email</th>
+            <th>Event Location</th>
+            <th>Number Of Attendee</th>
+            <th>Register</th>
+            <th>Edit Event:</th>
         </tr>
 
-        @*@foreach (var meeting in ViewBag.events)*@
+      
 
-        <!--this model name start with uppercase M(Model) -->
+     
         @foreach (var meeting in Model)
         {
-            <tr>
-                <td>@meeting.Id</td>
-                <td>@meeting.Name</td>
-                <td>@meeting.Description</td>
-                <td>@meeting.Date</td>
-                <td>@meeting.ContactEmail</td>
-                <td>
-                    <a asp-controller="Events" asp-action="Edit" asp-route-id="@meeting.Id">Edit Event</a>
-                    @*<form method="post" action="/Events/Delete">
-                            <input type="hidden" name="eventIds" value="@meeting.Id" />
-                            <input type="submit" value="Delete" class="btn btn-danger">
-                        </form>*@ @*// asp-route-id passes an {id?} parameter at the end of our route.*@
-                    </td>
+    <tr>
+        <td>@meeting.Id</td>
+        <td>@meeting.Name</td>
+        <td>@meeting.Description</td>
+        <td>@meeting.Date</td>
+        <td>@meeting.ContactEmail</td>
+        <td>@meeting.EventLocation</td>
+        <td>@meeting.NumberOfAtendee</td>
+        <td>@meeting.Register</td>
+        <td>
+            <a asp-controller="Events" asp-action="Edit" asp-route-id="@meeting.Id">Edit Event</a>
+            @*<form method="post" action="/Events/Delete">
+                <input type="hidden" name="eventIds" value="@meeting.Id" />
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </form>*@ @*// asp-route-id passes an {id?} parameter at the end of our route.*@
+        </td>
 
-                </tr>
+    </tr>
 
             }
     </table>
