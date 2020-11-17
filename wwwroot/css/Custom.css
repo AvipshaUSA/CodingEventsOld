@@ -1,5 +1,5 @@
 ﻿body {
-    background-color:aqua;
+    background-color:lightcoral;
 }
 
 
@@ -44,9 +44,7 @@ p{
 .field-validation-error{
     color:red;
 }
-.form-group{
- border:dashed;
-}
+
 h1{
     color:red;
 }

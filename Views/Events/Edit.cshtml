@@ -5,11 +5,9 @@
 
     <input type="hidden" value="@ViewBag.eventsDictionaryObj.Id" name="eventId" />
     <p> Edit Event Name:</p>
-    <input type="text" name="name" value="@ViewBag.eventsDictionaryObj.Name" /> @*name 'name'should be same as the name constructor variable of event constructor of Event.cs class
-        public Event(string name, string description, string date) : this()*@
+    <input type="text" name="name" value="@ViewBag.eventsDictionaryObj.Name" /> 
     <p>Edit  Event Description:</p>
-    <input type="text" name="description" value="@ViewBag.eventsDictionaryObj.Description" /> @*name description shoulb be same as Event.cs classes description constructor name
-        public Event(string name, string description, string date) : this().*@
+    <input type="text" name="description" value="@ViewBag.eventsDictionaryObj.Description" /> 
     <p>  Edit Event Date</p>
     <input type="date" name="date" value="@ViewBag.eventsDictionaryObj.Date" />
 
