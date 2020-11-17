@@ -35,6 +35,7 @@ else
             <th>Event Location</th>
             <th>Number Of Attendee</th>
             <th>Register</th>
+            <th> Event Type:</th>
             <th>Edit Event:</th>
         </tr>
 
@@ -52,6 +53,7 @@ else
         <td>@meeting.EventLocation</td>
         <td>@meeting.NumberOfAtendee</td>
         <td>@meeting.Register</td>
+        <td>@meeting.Type</td>
         <td>
             <a asp-controller="Events" asp-action="Edit" asp-route-id="@meeting.Id">Edit Event</a>
             @*<form method="post" action="/Events/Delete">

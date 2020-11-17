@@ -19,7 +19,7 @@ namespace CodingEvents.Models
         public bool Register { get; set; } 
         public bool IsTrue { get { return true; } }
 
-
+        public EventType Type { get; set; }
         public int Id { get; }
         private static int nextId = 1; 
         

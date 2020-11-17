@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CodingEvents.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -37,5 +39,22 @@ namespace CodingEvents.ViewModel
 
         
         public bool IsTrue { get { return true; } }
+
+
+        public EventType Type { get; set; }
+
+
+        // to create a dropdown list we need to take another List public List<SelectListItem> EventType { get; set; } <option-value="0 ">Conference</option>
+        
+        
+        public List<SelectListItem> EventTypes { get; set; } = new List<SelectListItem>  //SelectListItem is async framework provided to us
+        {
+
+        new SelectListItem(EventType.Conference.ToString(), ((int)EventType.Conference).ToString()),
+        new SelectListItem(EventType.Meetup.ToString(), ((int)EventType.Meetup).ToString()),
+        new SelectListItem(EventType.Social.ToString(), ((int)EventType.Social).ToString()),
+        new SelectListItem(EventType.Workshop.ToString(), ((int)EventType.Workshop).ToString())
+
+        };     
     }
 }
