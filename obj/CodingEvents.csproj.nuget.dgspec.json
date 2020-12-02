@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pradip\\Desktop\\lc101\\C#\\MVC\\CodingEvents\\CodingEvents.csproj": {}
+    "C:\\Users\\Pradip\\Desktop\\CodingEvents\\CodingEvents.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pradip\\Desktop\\lc101\\C#\\MVC\\CodingEvents\\CodingEvents.csproj": {
+    "C:\\Users\\Pradip\\Desktop\\CodingEvents\\CodingEvents.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pradip\\Desktop\\lc101\\C#\\MVC\\CodingEvents\\CodingEvents.csproj",
+        "projectUniqueName": "C:\\Users\\Pradip\\Desktop\\CodingEvents\\CodingEvents.csproj",
         "projectName": "CodingEvents",
-        "projectPath": "C:\\Users\\Pradip\\Desktop\\lc101\\C#\\MVC\\CodingEvents\\CodingEvents.csproj",
+        "projectPath": "C:\\Users\\Pradip\\Desktop\\CodingEvents\\CodingEvents.csproj",
         "packagesPath": "C:\\Users\\Pradip\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pradip\\Desktop\\lc101\\C#\\MVC\\CodingEvents\\obj\\",
+        "outputPath": "C:\\Users\\Pradip\\Desktop\\CodingEvents\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pradip\\AppData\\Roaming\\NuGet\\NuGet.Config",
